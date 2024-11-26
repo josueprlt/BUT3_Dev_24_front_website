@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 let music = {
     firstname_music: 'Level Days',
     name_music: 'Conro',
@@ -15,39 +17,53 @@ let music = {
 }
 
 function Header() {
+    useEffect(() => {
+        const headerRef = document.getElementById('header');
+        if (headerRef) {
+            headerRef.style.position = 'relative';
+        }
+    }, []);
 
     return (
-      <>
-        <header className="h-screen px-15 py-5">
-            <div className="h-full relative">
-                <nav className="flex justify-between items-start">
-                    <img src="/img/monstercat-logo.webp" alt="Image de monstercat" className="w-15 cursor-pointer"/>
-                    <img src="/svg/bx-menu.svg" alt="Svg du menu burger" className="cursor-pointer" />
-                </nav>
-                <nav className="absolute top-20 right-0 flex flex-col gap-4">
-                    <img src="/svg/bxl-instagram.svg" alt="Svg icon instagram" className="cursor-pointer"/>
-                    <img src="/svg/bxl-tiktok.svg" alt="Svg icon tiktok" className="cursor-pointer"/>
-                    <img src="/svg/bxl-twitter.svg" alt="Svg icon twitter" className="cursor-pointer"/>
-                    <img src="/svg/bxl-twitch.svg" alt="Svg icon twitch" className="cursor-pointer"/>
-                    <img src="/svg/bxl-facebook-circle.svg" alt="Svg icon facebook" className="cursor-pointer"/>
-                    <img src="/svg/bxl-discord.svg" alt="Svg icon discord" className="cursor-pointer"/>
-                    <img src="/svg/bxl-spotify.svg" alt="Svg icon spotify" className="cursor-pointer"/>
-                </nav>
+        <>
+            <header id='header' className="h-screen lg:px-15 lg:py-5 after:w-full after:h-3/4 after:absolute after:left-0 after:bottom-0 after:z-2 after:bg-gradient-to-b after:to-background">
+                <div className="h-full relative z-20">
+                    <nav className="flex justify-between sticky top-0 items-center bg-backgroundOpacity px-4 py-2 lg:relative lg:flex lg:justify-between lg:bg-inherit lg:p-0 lg:items-start lg:z-20">
+                        <img src="/img/monstercat-logo.webp" alt="Image de monstercat" className="w-9 cursor-pointer sm:w-12 lg:w-15" />
+                        <div className="hidden sm:flex sm:gap-4 lg:absolute lg:top-20 lg:right-0 lg:flex lg:flex-col lg:gap-4 lg:z-20">
+                            <img src="/svg/bxl-instagram.svg" alt="Svg icon instagram" className="cursor-pointer" />
+                            <img src="/svg/bxl-tiktok.svg" alt="Svg icon tiktok" className="cursor-pointer" />
+                            <img src="/svg/bxl-twitter.svg" alt="Svg icon twitter" className="cursor-pointer" />
+                            <img src="/svg/bxl-twitch.svg" alt="Svg icon twitch" className="cursor-pointer" />
+                            <img src="/svg/bxl-facebook-circle.svg" alt="Svg icon facebook" className="cursor-pointer" />
+                            <img src="/svg/bxl-discord.svg" alt="Svg icon discord" className="cursor-pointer" />
+                            <img src="/svg/bxl-spotify.svg" alt="Svg icon spotify" className="cursor-pointer" />
+                        </div>
+                        <img src="/svg/bx-menu.svg" alt="Svg du menu burger" className="cursor-pointer" />
+                    </nav>
 
-                <section className="flex">
-                    <div className="flex gap-2">
-                        <p className="flex gap-2 text-cover rotate-180"><span className="text-primary after:content-['-'] after:block">Instinct</span> Released May 22, 2020</p>
-                        <img src="/img/albumCover1.jpg" alt="Image de la couverture d'album" className="w-90" />
-                    </div>
-                    <div>
-                        text
-                    </div>
-                </section>
-            </div>
-        </header>
-      </>
+                    <section className="flex items-center flex-col mt-10 lg:gap-20 lg:flex-row lg:pt-20 lg:pl-15 lg:z-20">
+                        <div className="flex flex-col-reverse gap-10 sm:gap-2 sm:flex-row">
+                            <p className="hidden sm:flex sm:gap-7 rotate-180 text-cover"><span className="relative text-primary after:absolute after:w-[1.5px] after:h-4 after:bg-white after:left-[8px] after:-bottom-[22.5px]">{music.name_album}</span>Released {music.date_album}</p>
+                            <p className="flex gap-7 sm:hidden"><span className="relative text-primary after:absolute after:w-4 after:h-[1.5px] after:bg-white after:left-[57px] after:bottom-2">{music.name_album}</span>Released {music.date_album}</p>
+                            <img src={music.image_album} alt="Image de la couverture d'album" className="w-[500px] lg:w-90" />
+                        </div>
+                        <div>
+                            <p className='text-foreground text-5xl font-extrabold'>{music.firstname_music}</p>
+                            <p className='text-4xl font-bold mt-2'>{music.name_music}</p>
+
+                            <div className='my-5'>
+                                <div className='w-20 h-20 rounded-full overflow-hidden'>
+                                    <img className='w-full h-full object-cover' src={music.artists[0].image_profil} alt="Image artiste de l'album" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div className="absolute inset-0 z-1 bg-cover bg-center filter blur-sm" style={{ backgroundImage: `url(${music.image_album})` }}></div>
+            </header>
+        </>
     )
-  }
-  
-  export default Header
-  
+}
+
+export default Header;
