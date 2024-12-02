@@ -1,6 +1,7 @@
 import Header from "./components/header";
 import Stream from "./components/stream";
 import TrackList from "./components/tracklist";
+import Releases from "./components/releases";
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Stream />
       <TrackList />
+      <Releases />
     </>
   )
 }

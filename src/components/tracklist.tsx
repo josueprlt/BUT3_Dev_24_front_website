@@ -1,4 +1,4 @@
-import { TiktokIcon, DiscordIcon, SpotifyIcon, SoundcloudIcon, AppleIcon, YoutubeIcon } from "../components/icons";
+import { PlayIcon, ShareIcon } from "../components/icons";
 
 const listOfMusic = [
     {
@@ -156,10 +156,35 @@ function TrackList() {
         <section className="mx-auto mt-10 px-5 text-xl font-bold w-full sm:px-0 sm:w-[500px] lg:w-auto mt-5">
             <h2 className="uppercase">Track List</h2>
 
-            <div className="flex flex-wrap mt-5">
+            <div className="flex flex-wrap mt-5 gap-5">
                 {listOfMusic.map((str, index) => (
-                    <div>
-                        
+                    <div key={index} className="flex justify-between items-center w-full">
+                        <div className="flex items-center sm:gap-2">
+                            <p className="text-lg w-[20.6px]">{index}</p>
+                            <div className="cursor-pointer">
+                                <PlayIcon />
+                            </div>
+                            <div>
+                                <p className="text-lg">{str.title}</p>
+                                <p className="text-sm">
+                                    <>
+                                        {str.creators.map((creator, index) => (
+                                            <span key={index}>
+                                                {creator.name}
+                                                {index < str.creators.length - 1 && ' & '}
+                                            </span>
+                                        ))}
+                                    </>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="flex gap-2">
+                            <p className="text-lg">{str.time.minute}:{str.time.seconde}</p>
+                            <div className="cursor-pointer">
+                                <ShareIcon />
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>

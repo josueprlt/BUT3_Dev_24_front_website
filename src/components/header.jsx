@@ -56,8 +56,8 @@ function Header() {
                             <div className='my-10 flex gap-5'>
                                 {music.artists.map((artist, index) => (
                                     <>
-                                        <div className='w-20 h-20 rounded-full overflow-hidden'>
-                                            <img key={index} className='w-full h-full object-cover' src={artist.image_profil} alt="Image artiste de l'album" />
+                                        <div key={index} className='w-20 h-20 rounded-full overflow-hidden'>
+                                            <img className='w-full h-full object-cover' src={artist.image_profil} alt="Image artiste de l'album" />
                                         </div>
                                     </>
                                 ))}

@@ -34,8 +34,8 @@ function Stream() {
             <h2 className="uppercase">Stream it your way</h2>
 
             <div className="flex flex-wrap mt-5">
-                {stream.map((str) => (
-                    <div className="flex gap-1 justify-center items-center px-2.5 py-2 outline outline-1 outline-foreground outline-offset-0">
+                {stream.map((str, index) => (
+                    <div key={index} className="flex gap-1 justify-center items-center px-2.5 py-2 outline outline-1 outline-foreground outline-offset-0">
                         {str.icon}
                         {str.name && (
                             <p className="text-sm">{str.name}</p>
