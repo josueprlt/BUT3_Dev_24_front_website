@@ -6,6 +6,8 @@
   --color-backgroundOpacity: rgba(0, 0, 0, 0.7);
   --color-primary: #5fac8e;
   --color-secondary: #383838;
+  --color-gray: #898888;
+  --color-lightgray: #F1F1F1;
 }
 
 body {

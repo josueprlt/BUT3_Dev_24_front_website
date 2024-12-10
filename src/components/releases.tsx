@@ -36,23 +36,31 @@ const albums = [
 function TrackList() {
 
     return (
-        <section className="mx-auto mt-10 px-5 text-xl font-bold w-full sm:px-0 sm:w-[500px] lg:w-auto mt-5">
-            <h2 className="uppercase">Other releases like this</h2>
+        <section className="mx-auto mt-10 px-5 text-xl font-bold w-full sm:px-0 sm:w-[500px] mt-5 lg:w-auto lg:px-15 lg:mt-15">
+            <h2 className="uppercase lg:text-4xl">Other releases like this</h2>
 
-            <div className="flex flex-wrap justify-between">
-                {albums.map((album) => (
-                    <div>
-                        <div className="w-40 h-40">
-                            <img src={album.image} alt="Image d'album" />
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-4 mt-5 lg:flex lg:flex-wrap lg:gap-10">
+                {albums.map((album, index) => (
+                    <div
+                        key={index}
+                        className="w-full lg:w-50"
+                    >
+                        <div className="w-auto h-40 overflow-hidden lg:w-50 lg:h-50">
+                            <img
+                                src={album.image}
+                                className="object-cover h-full w-full"
+                                alt={`Image d'album: ${album.title}`}
+                            />
                         </div>
 
-                        <div className="text-wrap">
-                            <p className="text-lg uppercase">{album.title}</p>
-                            <p className="text-xs">{album.creator}</p>
+                        <div className="mt-4">
+                            <p className="text-lg uppercase font-semibold">{album.title}</p>
+                            <p className="text-xs font-normal italic text-gray-300">{album.creator}</p>
                         </div>
                     </div>
                 ))}
             </div>
+
         </section>
     )
 }

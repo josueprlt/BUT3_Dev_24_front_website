@@ -1,4 +1,5 @@
-import { PlayIcon, ShareIcon } from "../components/icons";
+import { useState } from 'react';
+import { PlayIcon, PauseIcon, ShareIcon } from "../components/icons";
 
 const listOfMusic = [
     {
@@ -150,28 +151,45 @@ const listOfMusic = [
     },
 ]
 
+
 function TrackList() {
+    // Initialisation de l'état pour chaque piste
+    const [playingTracks, setPlayingTracks] = useState<Record<number, boolean>>({});
+
+    const handleChange = (index: number) => {
+        setPlayingTracks((prev) => ({
+            ...prev,
+            [index]: !prev[index], // Alterne l'état de lecture pour la piste donnée
+        }));
+    };
 
     return (
-        <section className="mx-auto mt-10 px-5 text-xl font-bold w-full sm:px-0 sm:w-[500px] lg:w-auto mt-5">
-            <h2 className="uppercase">Track List</h2>
+        <section className="mx-auto mt-10 px-5 text-xl font-bold w-full sm:px-0 sm:w-[500px] lg:w-auto lg:px-15 lg:mt-15">
+            <h2 className="uppercase lg:text-4xl">Track List</h2>
 
-            <div className="flex flex-wrap mt-5 gap-5">
-                {listOfMusic.map((str, index) => (
+            <div className="flex flex-wrap mt-5 gap-5 lg:mt-10 lg:gap-10">
+                {listOfMusic.map((track, index) => (
                     <div key={index} className="flex justify-between items-center w-full">
-                        <div className="flex items-center sm:gap-2">
-                            <p className="text-lg w-[20.6px]">{index}</p>
-                            <div className="cursor-pointer">
-                                <PlayIcon />
+                        <div className="flex items-center sm:gap-2 lg:gap-5">
+                            <p className="text-lg w-[20.6px] font-light">{index + 1}</p>
+                            <div
+                                className="cursor-pointer"
+                                onClick={() => handleChange(index)}
+                            >
+                                {!playingTracks[index] ? (
+                                    <PlayIcon className="w-4" />
+                                ) : (
+                                    <PauseIcon className="w-4" />
+                                )}
                             </div>
                             <div>
-                                <p className="text-lg">{str.title}</p>
-                                <p className="text-sm">
+                                <p className="text-lg font-normal">{track.title}</p>
+                                <p className="text-sm font-light">
                                     <>
-                                        {str.creators.map((creator, index) => (
-                                            <span key={index}>
+                                        {track.creators.map((creator, idx) => (
+                                            <span key={idx}>
                                                 {creator.name}
-                                                {index < str.creators.length - 1 && ' & '}
+                                                {idx < track.creators.length - 1 && " & "}
                                             </span>
                                         ))}
                                     </>
@@ -179,8 +197,10 @@ function TrackList() {
                             </div>
                         </div>
 
-                        <div className="flex gap-2">
-                            <p className="text-lg">{str.time.minute}:{str.time.seconde}</p>
+                        <div className="flex gap-2 lg:gap-5">
+                            <p className="text-lg font-light">
+                                {track.time.minute}:{track.time.seconde}
+                            </p>
                             <div className="cursor-pointer">
                                 <ShareIcon />
                             </div>
@@ -189,7 +209,7 @@ function TrackList() {
                 ))}
             </div>
         </section>
-    )
+    );
 }
 
 export default TrackList;
