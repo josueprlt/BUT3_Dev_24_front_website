@@ -1,5 +1,3 @@
-import { PlayIcon, ShareIcon } from "../components/icons";
-
 const albums = [
     {
         title: 'Feeling',
@@ -36,8 +34,8 @@ const albums = [
 function TrackList() {
 
     return (
-        <section className="mx-auto mt-10 px-5 text-xl font-bold w-full sm:px-0 sm:w-[500px] mt-5 lg:w-auto lg:px-15 lg:mt-15">
-            <h2 className="uppercase lg:text-4xl">Other releases like this</h2>
+        <section className="mx-auto mt-10 px-5 text-xl font-normal w-full sm:px-0 sm:w-[500px] mt-5 lg:w-auto lg:px-35 lg:mt-15">
+            <h2 className="uppercase lg:text-4xl font-normal">Other releases like this</h2>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-4 mt-5 lg:flex lg:flex-wrap lg:gap-10">
                 {albums.map((album, index) => (
@@ -54,8 +52,8 @@ function TrackList() {
                         </div>
 
                         <div className="mt-4">
-                            <p className="text-lg uppercase font-semibold">{album.title}</p>
-                            <p className="text-xs font-normal italic text-gray-300">{album.creator}</p>
+                            <p className="text-lg uppercase font-normal">{album.title}</p>
+                            <p className="text-xs font-normal italic text-gray-300 font-normal">{album.creator}</p>
                         </div>
                     </div>
                 ))}

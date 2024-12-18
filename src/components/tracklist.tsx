@@ -164,14 +164,14 @@ function TrackList() {
     };
 
     return (
-        <section className="mx-auto mt-10 px-5 text-xl font-bold w-full sm:px-0 sm:w-[500px] lg:w-auto lg:px-15 lg:mt-15">
-            <h2 className="uppercase lg:text-4xl">Track List</h2>
+        <section className="mx-auto mt-10 px-5 text-xl font-bold w-full sm:px-0 sm:w-[500px] lg:w-auto lg:px-35 lg:mt-15">
+            <h2 className="uppercase lg:text-4xl font-normal">Track List</h2>
 
             <div className="flex flex-wrap mt-5 gap-5 lg:mt-10 lg:gap-10">
                 {listOfMusic.map((track, index) => (
                     <div key={index} className="flex justify-between items-center w-full">
                         <div className="flex items-center sm:gap-2 lg:gap-5">
-                            <p className="text-lg w-[20.6px] font-light">{index + 1}</p>
+                            <p className="text-lg w-[20.6px] font-normal">{index + 1}</p>
                             <div
                                 className="cursor-pointer"
                                 onClick={() => handleChange(index)}
@@ -184,10 +184,10 @@ function TrackList() {
                             </div>
                             <div>
                                 <p className="text-lg font-normal">{track.title}</p>
-                                <p className="text-sm font-light">
+                                <p className="text-sm font-normal">
                                     <>
                                         {track.creators.map((creator, idx) => (
-                                            <span key={idx}>
+                                            <span className='font-normal' key={idx}>
                                                 {creator.name}
                                                 {idx < track.creators.length - 1 && " & "}
                                             </span>
@@ -198,7 +198,7 @@ function TrackList() {
                         </div>
 
                         <div className="flex gap-2 lg:gap-5">
-                            <p className="text-lg font-light">
+                            <p className="text-lg font-normal">
                                 {track.time.minute}:{track.time.seconde}
                             </p>
                             <div className="cursor-pointer">
