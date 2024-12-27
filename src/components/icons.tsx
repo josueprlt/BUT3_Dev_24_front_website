@@ -8,7 +8,7 @@ function MenuIcon({ props }) {
 
 function PlayIcon({ props }) {
     return (
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='#fdfdfd' width='30' height='30' {...props} ><path d="M7 6v12l10-6z"></path></svg>
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' width='30' height='30' {...props} ><path d="M7 6v12l10-6z"></path></svg>
     );
 }
 
@@ -20,13 +20,13 @@ function PauseIcon({ props }) {
 
 function RightArrowIcon({ props }) {
     return (
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='#fdfdfd' width='24' height='24' {...props} ><path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' width='24' height='24' {...props} ><path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
     );
 }
 
 function ShareIcon({ props }) {
     return (
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='#fdfdfd' width='24' height='24' {...props} ><path d="M5.5 15a3.51 3.51 0 0 0 2.36-.93l6.26 3.58a3.06 3.06 0 0 0-.12.85 3.53 3.53 0 1 0 1.14-2.57l-6.26-3.58a2.74 2.74 0 0 0 .12-.76l6.15-3.52A3.49 3.49 0 1 0 14 5.5a3.35 3.35 0 0 0 .12.85L8.43 9.6A3.5 3.5 0 1 0 5.5 15zm12 2a1.5 1.5 0 1 1-1.5 1.5 1.5 1.5 0 0 1 1.5-1.5zm0-13A1.5 1.5 0 1 1 16 5.5 1.5 1.5 0 0 1 17.5 4zm-12 6A1.5 1.5 0 1 1 4 11.5 1.5 1.5 0 0 1 5.5 10z"></path></svg>
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' width='24' height='24' {...props} ><path d="M5.5 15a3.51 3.51 0 0 0 2.36-.93l6.26 3.58a3.06 3.06 0 0 0-.12.85 3.53 3.53 0 1 0 1.14-2.57l-6.26-3.58a2.74 2.74 0 0 0 .12-.76l6.15-3.52A3.49 3.49 0 1 0 14 5.5a3.35 3.35 0 0 0 .12.85L8.43 9.6A3.5 3.5 0 1 0 5.5 15zm12 2a1.5 1.5 0 1 1-1.5 1.5 1.5 1.5 0 0 1 1.5-1.5zm0-13A1.5 1.5 0 1 1 16 5.5 1.5 1.5 0 0 1 17.5 4zm-12 6A1.5 1.5 0 1 1 4 11.5 1.5 1.5 0 0 1 5.5 10z"></path></svg>
     );
 }
 
@@ -102,4 +102,26 @@ function MusicIcon({ props }) {
     );
 }
 
-export { MenuIcon, PlayIcon, PauseIcon, RightArrowIcon, ShareIcon, AppleIcon, DeezerIcon, DiscordIcon, FacebookIcon, InstagramIcon, SoundcloudIcon, SpotifyIcon, TiktokIcon, TwitchIcon, TwitterIcon, YoutubeIcon, MusicIcon };
+function UsersIcon({ className, ...props }) {
+    return (
+        <svg className={className} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" {...props}>
+            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+        </svg>
+    );
+}
+
+function CloseIcon({ className, ...props }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+            className={className}
+            {...props}
+        >
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+        </svg>
+    );
+}
+
+export { MenuIcon, PlayIcon, PauseIcon, RightArrowIcon, ShareIcon, AppleIcon, DeezerIcon, DiscordIcon, FacebookIcon, InstagramIcon, SoundcloudIcon, SpotifyIcon, TiktokIcon, TwitchIcon, TwitterIcon, YoutubeIcon, MusicIcon, CloseIcon, UsersIcon };

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { InstagramIcon, TwitterIcon, TwitchIcon, TiktokIcon, FacebookIcon, DiscordIcon, SpotifyIcon, YoutubeIcon, AppleIcon, SoundcloudIcon, MusicIcon, RightArrowIcon } from "./icons";
 
 let links = [
@@ -44,8 +43,8 @@ function Footer() {
                         </div>
                         <div className='relative rounded-none'>
                             <input className='border-b border-b-gray w-full py-2 text-gray bg-background mt-4' type="text" placeholder='Enter email' />
-                            <button className='group absolute rounded-none right-0 bottom-0 px-3 py-2 flex justify-center items-center bg-none border-none hover:bg-foreground'>
-                                <RightArrowIcon className="text-foreground hover:text-background" />
+                            <button className='group absolute rounded-none right-0 bottom-0 px-3 py-2 text-foreground flex justify-center items-center bg-none border-none hover:bg-foreground hover:text-background cursor-pointer'>
+                                <RightArrowIcon className="transition-all duration-300" />
                             </button>
                         </div>
                     </div>

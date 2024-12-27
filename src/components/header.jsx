@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
-import { InstagramIcon, TwitterIcon, TwitchIcon, TiktokIcon, FacebookIcon, DiscordIcon, SpotifyIcon, MenuIcon, PlayIcon, ShareIcon } from "../components/icons";
+import { InstagramIcon, TwitterIcon, TwitchIcon, TiktokIcon, FacebookIcon, DiscordIcon, SpotifyIcon, PlayIcon, ShareIcon, UsersIcon } from "../components/icons";
+import Navbar from "./navbar";
+import { User } from '@nextui-org/react';
 
 let music = {
     firstname_music: 'Level Days',
@@ -10,6 +12,9 @@ let music = {
         },
         {
             image_profil: '/img/artist2.webp'
+        },
+        {
+            image_profil: '/img/artist3.jpg'
         }
     ],
     image_album: '/img/albumCover1.jpg',
@@ -40,10 +45,10 @@ function Header() {
                             <DiscordIcon className="cursor-pointer" />
                             <SpotifyIcon className="cursor-pointer" />
                         </div>
-                        <MenuIcon className="cursor-pointer" />
+                        <Navbar />
                     </nav>
 
-                    <section className="flex items-center flex-col mt-10 px-5 lg:gap-20 lg:flex-row lg:pt-20 lg:pl-15 lg:z-20">
+                    <section className="flex items-center flex-col mt-10 pt-10 px-5 lg:gap-20 lg:flex-row lg:pt-20 lg:pl-15 lg:z-20">
                         <div className="flex flex-col-reverse gap-10 lg:gap-2 lg:flex-row">
                             <p className="hidden lg:flex lg:gap-7 rotate-180 text-cover font-sans font-normal italic"><span className="relative text-primary after:absolute after:w-[1.5px] after:h-4 after:bg-white after:left-[8px] after:-bottom-[22.5px]">{music.name_album}</span>Released {music.date_album}</p>
                             <p className="text-base flex gap-7 lg:hidden font-sans font-normal italic"><span className="relative text-primary after:absolute after:w-4 after:h-[1px] after:bg-white after:left-[57px] after:bottom-[10px]">{music.name_album}</span>Released {music.date_album}</p>
@@ -56,9 +61,18 @@ function Header() {
                             <div className='my-10 flex gap-5'>
                                 {music.artists.map((artist, index) => (
                                     <>
-                                        <div key={index} className='w-20 h-20 rounded-full overflow-hidden'>
-                                            <img className='w-full h-full object-cover' src={artist.image_profil} alt="Image artiste de l'album" />
-                                        </div>
+                                        {index > 1 ? (
+                                            index === 2 && (
+                                                <div key={index} className='w-20 h-20 rounded-full overflow-hidden flex items-center justify-center bg-lightgray'>
+                                                    <UsersIcon className='text-gray w-8 h-8 mr-px' />
+                                                    <span className='text-gray text-sm'>+{music.artists.length - 2}</span>
+                                                </div>
+                                            )
+                                        ) : (
+                                            <div key={index} className='w-20 h-20 rounded-full overflow-hidden'>
+                                                <img className='w-full h-full object-cover' src={artist.image_profil} alt="Image artiste de l'album" />
+                                            </div>
+                                        )}
                                     </>
                                 ))}
                             </div>
