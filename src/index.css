@@ -22,6 +22,7 @@
   --color-secondary: #383838;
   --color-gray: #898888;
   --color-lightgray: #F1F1F1;
+  --color-opaque: #FFFFFF00;
 }
 
 body {
@@ -36,4 +37,13 @@ body {
 
 .text-cover {
   writing-mode: vertical-lr;
+}
+
+.text-outline {
+  color: black;
+  text-shadow: 
+      -1px -1px 0 #fff,  
+       1px -1px 0 #fff,
+      -1px  1px 0 #fff,
+       1px  1px 0 #fff;
 }

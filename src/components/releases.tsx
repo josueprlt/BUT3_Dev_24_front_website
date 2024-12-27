@@ -1,3 +1,5 @@
+import React from 'react';
+
 const albums = [
     {
         title: 'Feeling',
@@ -34,16 +36,16 @@ const albums = [
 function TrackList() {
 
     return (
-        <section className="mx-auto mt-10 px-5 text-xl font-normal w-full sm:px-0 sm:w-[500px] mt-5 lg:w-auto lg:px-35 lg:mt-15">
+        <section className="mx-auto mt-10 px-5 text-xl font-normal w-full mt-5 lg:w-auto lg:px-35 lg:mt-15">
             <h2 className="uppercase lg:text-4xl font-normal">Other releases like this</h2>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-4 mt-5 lg:flex lg:flex-wrap lg:gap-10">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 mt-5">
                 {albums.map((album, index) => (
                     <div
                         key={index}
-                        className="w-full lg:w-50"
+                        className="col-span-1"
                     >
-                        <div className="w-auto h-40 overflow-hidden lg:w-50 lg:h-50">
+                        <div className="w-full h-40 overflow-hidden">
                             <img
                                 src={album.image}
                                 className="object-cover h-full w-full"

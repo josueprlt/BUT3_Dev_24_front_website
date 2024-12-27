@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { InstagramIcon, TwitterIcon, TwitchIcon, TiktokIcon, FacebookIcon, DiscordIcon, SpotifyIcon, PlayIcon, ShareIcon, UsersIcon } from "../components/icons";
 import Navbar from "./navbar";
-import { User } from '@nextui-org/react';
 
 let music = {
     firstname_music: 'Level Days',
@@ -32,7 +31,7 @@ function Header() {
 
     return (
         <>
-            <header id='header' className="h-auto lg:px-20 lg:py-5 after:w-full after:h-3/4 after:absolute after:left-0 after:-bottom-4 after:z-2 after:bg-gradient-to-b after:to-background">
+            <header id='header' className="h-auto lg:px-20 lg:py-5 md:h-[800px] after:w-full after:h-3/4 after:absolute after:left-0 after:-bottom-4 after:z-2 after:bg-gradient-to-b after:to-background">
                 <div className="h-full relative z-20">
                     <nav className="fixed top-0 left-0 w-full flex justify-between items-center bg-backgroundOpacity lg:bg-transparent px-4 py-2 z-50 lg:px-8 lg:py-4">
                         <img src="/img/monstercat-logo.webp" alt="Image de monstercat" className="w-9 cursor-pointer sm:w-12 lg:w-15" />
@@ -50,13 +49,13 @@ function Header() {
 
                     <section className="flex items-center flex-col mt-10 pt-10 px-5 lg:gap-20 lg:flex-row lg:pt-20 lg:pl-15 lg:z-20">
                         <div className="flex flex-col-reverse gap-10 lg:gap-2 lg:flex-row">
-                            <p className="hidden lg:flex lg:gap-7 rotate-180 text-cover font-sans font-normal italic"><span className="relative text-primary after:absolute after:w-[1.5px] after:h-4 after:bg-white after:left-[8px] after:-bottom-[22.5px]">{music.name_album}</span>Released {music.date_album}</p>
-                            <p className="text-base flex gap-7 lg:hidden font-sans font-normal italic"><span className="relative text-primary after:absolute after:w-4 after:h-[1px] after:bg-white after:left-[57px] after:bottom-[10px]">{music.name_album}</span>Released {music.date_album}</p>
-                            <img src={music.image_album} alt="Image de la couverture d'album" className="w-full sm:w-[500px] lg:w-[400px] xl:w-[450px]" />
+                            <p className="hidden lg:flex lg:gap-7 rotate-180 text-cover font-sans italic"><span className="relative text-primary after:absolute after:w-[1.5px] after:h-4 after:bg-white after:left-[8px] after:-bottom-[22.5px]">{music.name_album}</span>Released {music.date_album}</p>
+                            <p className="text-base flex gap-7 lg:hidden font-sans italic"><span className="relative text-primary after:absolute after:w-4 after:h-[1px] after:bg-white after:left-[57px] after:bottom-[10px]">{music.name_album}</span>Released {music.date_album}</p>
+                            <img src={music.image_album} alt="Image de la couverture d'album" className="w-full sm:w-[600px] lg:w-[400px] xl:w-[450px]" />
                         </div>
-                        <div className='w-full sm:w-[500px] lg:w-auto mt-5'>
-                            <p className='text-foreground text-xl sm:text-5xl font-normal'>{music.firstname_music}</p>
-                            <p className='text-xl sm:text-4xl font-bold mt-2 font-normal'>{music.name_music}</p>
+                        <div className='w-full sm:w-[600px] lg:w-auto mt-5'>
+                            <p className='text-xl sm:text-5xl text-outline'>{music.firstname_music}</p>
+                            <p className='text-xl sm:text-4xl font-bold mt-2'>{music.name_music}</p>
 
                             <div className='my-10 flex gap-5'>
                                 {music.artists.map((artist, index) => (

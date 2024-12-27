@@ -112,7 +112,7 @@ export default function Navbar() {
                                             {item.list && (
                                                 <ul className="pl-4 flex flex-col gap-3">
                                                     {item.list.map((listItem, listIndex) => (
-                                                        <li key={listIndex} className="text-sm text-gray cursor-pointer hover:text-white ease-in-out duration-500">{listItem}</li>
+                                                        <li key={listIndex} className="text-sm text-gray cursor-pointer hover:text-white ease-in-out duration-500"><a href="/">{listItem}</a></li>
                                                     ))}
                                                 </ul>
                                             )}
