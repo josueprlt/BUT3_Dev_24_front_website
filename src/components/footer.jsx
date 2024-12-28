@@ -30,19 +30,30 @@ function Footer() {
         <>
             <footer className="px-5 mt-25 lg:w-auto lg:px-35 lg:mt-15">
                 <div className='border-t border-b border-foreground md:flex md:justify-between md:pb-10'>
-                    <ul className='mt-10'>
+                    <ul className='mt-10 flex flex-col xl:hidden'>
                         {links.map((link) => (
-                            <li><a href="" className='uppercase font-normal'>{link}</a></li>
+                            <li key={link}><a href="" className='uppercase md:text-lg'>{link}</a></li>
+                        ))}
+                    </ul>
+                    
+                    <ul className='mt-10 hidden xl:flex xl:flex-col xl:gap-4'>
+                        {links.slice(0, -2).map((link) => (
+                            <li key={link}><a href="" className='uppercase md:text-lg'>{link}</a></li>
+                        ))}
+                    </ul>
+                    <ul className='mt-10 hidden xl:flex xl:flex-col xl:gap-4'>
+                        {links.slice(-2).map((link) => (
+                            <li key={link}><a href="" className='uppercase md:text-lg'>{link}</a></li>
                         ))}
                     </ul>
 
                     <div className='my-10 md:mb-0 md:flex md:flex-col md:justify-between'>
                         <div className='md:flex md:flex-col md:gap-4'>
-                            <h3 className='uppercase text-gray font-normal'>Monstercat News</h3>
-                            <p className='text-lightgray italic font-sans font-normal mt-2 w-80'>Don't miss a thing, stay up to date with the latest news from us.</p>
+                            <h3 className='uppercase text-gray text-lg'>Monstercat News</h3>
+                            <p className='text-lightgray italic font-sans text-sm mt-2 w-80'>Don't miss a thing, stay up to date with the latest news from us.</p>
                         </div>
                         <div className='relative rounded-none'>
-                            <input className='border-b border-b-gray w-full py-2 text-gray bg-background mt-4' type="text" placeholder='Enter email' />
+                            <input className='border-b border-b-gray w-full py-2 pl-2 text-gray bg-none mt-4 font-sans' type="text" placeholder='Enter email' />
                             <button className='group absolute rounded-none right-0 bottom-0 px-3 py-2 text-foreground flex justify-center items-center bg-none border-none hover:bg-foreground hover:text-background cursor-pointer'>
                                 <RightArrowIcon className="transition-all duration-300" />
                             </button>
@@ -51,7 +62,7 @@ function Footer() {
 
                 </div>
                 <div className='my-10 block md:flex md:justify-between md:items-center'>
-                    <p className='text-lightgray italic font-sans font-normal'>2011 - 2024 © Monstercat, All Rights Reserved</p>
+                    <p className='text-lightgray italic font-sans text-sm'>2011 - 2024 © Monstercat, All Rights Reserved</p>
                     <ul className='flex justify-start mt-5 flex-wrap gap-3 md:justify-end md:mt-0'>
                         {logos.map((logo) => (
                             <li><a className='font-normal' href="">{logo}</a></li>

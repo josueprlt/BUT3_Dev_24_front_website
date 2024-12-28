@@ -31,8 +31,8 @@ const stream = [
 function Stream() {
 
     return (
-        <section className="mx-auto mt-10 px-5 text-xl font-bold w-full mt-5 lg:w-auto lg:px-35 lg:mt-15">
-            <h2 className="uppercase lg:text-4xl font-normal">Stream it your way</h2>
+        <section className="mx-auto mt-10 px-5 text-xl font-bold w-full md:mt-69 lg:w-auto lg:px-35 lg:mt-15">
+            <h2 className="uppercase lg:text-4xl font-normal md:mb-10">Stream it your way</h2>
 
             <ul className="flex flex-wrap mt-5">
                 {stream.map((str, index) => (

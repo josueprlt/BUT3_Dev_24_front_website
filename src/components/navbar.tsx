@@ -24,10 +24,10 @@ let drawerList = [
     {
         title: "MUSIC",
         list: [
-            "Our Music",
-            "Instinct",
-            "Uncaged",
-            "Silk",
+            "OUR MUSIC",
+            "INSTINCT",
+            "UNCAGED",
+            "SILK",
         ]
     },
     {
@@ -36,12 +36,12 @@ let drawerList = [
     {
         title: "ABOUT",
         list: [
-            "About Monstercat",
-            "Diversity & Inclusion",
-            "Code of Ethics",
-            "Environmental",
-            "Contact Us",
-            "Careers",
+            "ABOUT MONSTERCAT",
+            "DIVERSITY & INCLUSION",
+            "CODE OF ETHICS",
+            "ENVIRONMENTAL",
+            "CONTACT US",
+            "CARREERS",
         ]
     },
     {
@@ -50,17 +50,17 @@ let drawerList = [
     {
         title: "EVENTS",
         list: [
-            "Monstercat Events Experience",
-            "Upcoming Events",
+            "MONSTERCAT EVENTS EXPERIENCE",
+            "UPCOMING EVENTS",
         ]
     },
     {
         title: "PROGRAMMING",
         list: [
             "MonstercatTV",
-            "Call of the Wild",
-            "Silk Showcase",
-            "Upcoming Shows",
+            "CALL OF THE WILD",
+            "SILK SHOWCASE",
+            "UPCOMING SHOWS",
         ]
     },
     {
@@ -95,7 +95,7 @@ export default function Navbar() {
             <button className="p-0 m-0 bg-transparent text-right border-none block cursor-pointer" onClick={onOpen}>
                 <MenuIcon />
             </button>
-            <Drawer className="bg-background uppercase" isOpen={isOpen} onOpenChange={onOpenChange} hideCloseButton>
+            <Drawer className="bg-background" isOpen={isOpen} onOpenChange={onOpenChange} hideCloseButton>
                 <DrawerContent>
                     {(onClose) => (
                         <>
@@ -108,7 +108,7 @@ export default function Navbar() {
                             <DrawerBody>
                                 <Accordion disabledKeys={disabledKeys} className="cursor-pointer">
                                     {drawerList.map((item, index) => (
-                                        <AccordionItem className="uppercase" indicator={item.list ? '' : ' '} key={index} aria-label={`Accordion ${index}`} title={item.title}>
+                                        <AccordionItem indicator={item.list ? '' : ' '} key={index} aria-label={`Accordion ${index}`} title={item.title}>
                                             {item.list && (
                                                 <ul className="pl-4 flex flex-col gap-3">
                                                     {item.list.map((listItem, listIndex) => (

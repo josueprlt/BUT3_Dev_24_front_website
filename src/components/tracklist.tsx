@@ -165,7 +165,7 @@ function TrackList() {
 
     return (
         <section className="mx-auto mt-10 px-5 text-xl font-bold w-full lg:w-auto lg:px-35 lg:mt-15">
-            <h2 className="uppercase lg:text-4xl font-normal">Track List</h2>
+            <h2 className="uppercase lg:text-4xl font-normal md:mb-10">Track List</h2>
 
             <div className="flex flex-wrap mt-5 gap-5 lg:mt-10 lg:gap-10 font-montserrat font-bold">
                 {listOfMusic.map((track, index) => (

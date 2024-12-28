@@ -34,15 +34,15 @@ function Header() {
             <header id='header' className="h-auto lg:px-20 lg:py-5 md:h-[800px] after:w-full after:h-3/4 after:absolute after:left-0 after:-bottom-4 after:z-2 after:bg-gradient-to-b after:to-background">
                 <div className="h-full relative z-20">
                     <nav className="fixed top-0 left-0 w-full flex justify-between items-center bg-backgroundOpacity lg:bg-transparent px-4 py-2 z-50 lg:px-8 lg:py-4">
-                        <img src="/img/monstercat-logo.webp" alt="Image de monstercat" className="w-9 cursor-pointer sm:w-12 lg:w-15" />
+                        <a href="/"><img src="/img/monstercat-logo.webp" alt="Image de monstercat" className="w-9 cursor-pointer sm:w-12 lg:w-15" /></a>
                         <div className="hidden pr-4 sm:flex sm:gap-4 lg:absolute lg:top-30 lg:right-0 lg:flex lg:flex-col lg:gap-4 lg:z-20 lg:pr-8">
-                            <InstagramIcon className="cursor-pointer" />
-                            <TiktokIcon className="cursor-pointer" />
-                            <TwitterIcon className="cursor-pointer" />
-                            <TwitchIcon className="cursor-pointer" />
-                            <FacebookIcon className="cursor-pointer" />
-                            <DiscordIcon className="cursor-pointer" />
-                            <SpotifyIcon className="cursor-pointer" />
+                            <a href="/"><InstagramIcon /></a>
+                            <a href="/"><TiktokIcon /></a>
+                            <a href="/"><TwitterIcon /></a>
+                            <a href="/"><TwitchIcon /></a>
+                            <a href="/"><FacebookIcon /></a>
+                            <a href="/"><DiscordIcon /></a>
+                            <a href="/"><SpotifyIcon /></a>
                         </div>
                         <Navbar />
                     </nav>

@@ -36,14 +36,14 @@ const albums = [
 function TrackList() {
 
     return (
-        <section className="mx-auto mt-10 px-5 text-xl font-normal w-full mt-5 lg:w-auto lg:px-35 lg:mt-15">
-            <h2 className="uppercase lg:text-4xl font-normal">Other releases like this</h2>
+        <section className="mx-auto mt-10 px-5 text-xl font-normal w-full mt-5 lg:w-auto lg:px-35 lg:mt-20 lg:pb-25">
+            <h2 className="uppercase lg:text-4xl font-normal md:mb-10">Other releases like this</h2>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 mt-5">
                 {albums.map((album, index) => (
                     <div
                         key={index}
-                        className="col-span-1"
+                        className="col-span-1 cursor-pointer"
                     >
                         <div className="w-full h-40 overflow-hidden">
                             <img

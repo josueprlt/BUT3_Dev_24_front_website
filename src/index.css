@@ -33,6 +33,22 @@ body {
   font-family: 'Monument Extended', sans-serif;
   background-color: var(--color-background);
   color: var(--color-foreground);
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/public/img/grain-noir.avif');
+  background-size: 500px 500px;
+  background-repeat: repeat;
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .text-cover {
@@ -41,9 +57,9 @@ body {
 
 .text-outline {
   color: black;
-  text-shadow: 
-      -1px -1px 0 #fff,  
-       1px -1px 0 #fff,
-      -1px  1px 0 #fff,
-       1px  1px 0 #fff;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 }
