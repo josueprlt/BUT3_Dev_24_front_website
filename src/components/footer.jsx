@@ -64,8 +64,8 @@ function Footer() {
                 <div className='my-10 block md:flex md:justify-between md:items-center'>
                     <p className='text-lightgray italic font-sans text-sm'>2011 - 2024 © Monstercat, All Rights Reserved</p>
                     <ul className='flex justify-start mt-5 flex-wrap gap-3 md:justify-end md:mt-0'>
-                        {logos.map((logo) => (
-                            <li><a className='font-normal' href="">{logo}</a></li>
+                        {logos.map((logo, index) => (
+                            <li key={index}><a className='font-normal' href="">{logo}</a></li>
                         ))}
                     </ul>
                 </div>
